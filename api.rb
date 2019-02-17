@@ -11,4 +11,5 @@ class API < Grape::API
 
   mount Endpoints::V1::Mounts::Healthcheck
   mount Endpoints::V1::Mounts::App
+  mount Endpoints::V1::Mounts::Universe
 end
