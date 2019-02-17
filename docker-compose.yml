@@ -1,0 +1,21 @@
+version: '3'
+services:
+  database:
+    build:
+      context: ./docker/database
+      dockerfile: Dockerfile
+    ports:
+      - "5432:5432"
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/app/Dockerfile
+    depends_on:
+      - database
+    expose:
+      - "3000"
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+    entrypoint: 'sh ./docker/app/entrypoint.sh'
