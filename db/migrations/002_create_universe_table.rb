@@ -1,8 +1,8 @@
-puts 'Creating Set table'
+puts 'Creating Universe table'
 
 Sequel.migration do
   up do
-    create_table(:set) do
+    create_table(:universe) do
       primary_key :id
       String :name, null: false, unique: true
       String :description
@@ -10,6 +10,6 @@ Sequel.migration do
   end
 
   down do
-    drop_table(:set)
+    drop_table(:universe)
   end
 end
