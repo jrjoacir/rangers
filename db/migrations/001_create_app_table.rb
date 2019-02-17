@@ -1,3 +1,5 @@
+puts 'Creating App table'
+
 Sequel.migration do
   up do
     create_table(:app) do

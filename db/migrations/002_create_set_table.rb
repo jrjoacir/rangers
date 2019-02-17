@@ -1,3 +1,5 @@
+puts 'Creating Set table'
+
 Sequel.migration do
   up do
     create_table(:set) do
